@@ -33,3 +33,9 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
+# Документация
+
+Документация для API Yatube доступна по адресу:
+```
+"http://127.0.0.1:8000/redoc/'
+```
