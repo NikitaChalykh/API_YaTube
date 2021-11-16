@@ -37,5 +37,5 @@ python3 manage.py runserver
 
 Документация для API Yatube доступна по адресу:
 ```
-"http://127.0.0.1:8000/redoc/'
+"http://127.0.0.1:8000/redoc/"
 ```
