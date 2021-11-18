@@ -58,10 +58,8 @@ class FollowSerializer(serializers.ModelSerializer):
             )
         ]
 
-    def create(self, validated_data):
-        if validated_data.get('user') == validated_data.get('following'):
+    def validate(self, data):
+        if data['following'] == self.context['request'].user:
             raise serializers.ValidationError(
                 'Имя не может совпадать с цветом!')
-        else:
-            follow = Follow.objects.create(**validated_data)
-        return follow
+        return data
