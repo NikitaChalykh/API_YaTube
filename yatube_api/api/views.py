@@ -4,11 +4,10 @@ from posts.models import Post, Group, Follow
 from .serializers import PostSerializer, GroupSerializer
 from .serializers import CommentSerializer, FollowSerializer
 from rest_framework.pagination import LimitOffsetPagination
-from .permissions import AuthorOrReadOnly, ReadOnly
+from .permissions import AuthorOrReadOnly
 from rest_framework import permissions
 from rest_framework import filters
 from rest_framework import mixins
-from rest_framework import serializers
 
 
 class ListCreateViewSet(
@@ -27,11 +26,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
-
-    def get_permissions(self):
-        if self.action == 'retrieve':
-            return (ReadOnly(),)
-        return super().get_permissions()
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
@@ -55,11 +49,6 @@ class CommentViewSet(viewsets.ModelViewSet):
         post = get_object_or_404(Post, pk=post_id)
         serializer.save(author=author, post=post)
 
-    def get_permissions(self):
-        if self.action == 'retrieve':
-            return (ReadOnly(),)
-        return super().get_permissions()
-
 
 class FollowViewSet(ListCreateViewSet):
     serializer_class = FollowSerializer
@@ -73,7 +62,4 @@ class FollowViewSet(ListCreateViewSet):
 
     def perform_create(self, serializer):
         user = self.request.user
-        following = self.request.data['following']
-        if user.username == following:
-            raise serializers.ValidationError()
         serializer.save(user=user)
