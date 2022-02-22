@@ -28,7 +28,7 @@ API сервис для [проекта социальной сети Yatube](ht
 ```
 git clone 'https://github.com/NikitaChalykh/API_YaTube.git'
 
-cd API_YaTube
+cd api_final_yatube
 ```
 2. Cоздать и активировать виртуальное окружение:
 ```
