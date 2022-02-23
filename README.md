@@ -28,7 +28,7 @@ API сервис для [проекта социальной сети Yatube](ht
 ```
 git clone 'https://github.com/NikitaChalykh/API_YaTube.git'
 
-cd api_final_yatube
+cd API_YaTube
 ```
 2. Cоздать и активировать виртуальное окружение:
 ```
@@ -44,9 +44,11 @@ pip install -r requirements.txt
 ```
 4. Выполнить миграции:
 ```
+cd api_final_yatube
+
 python3 manage.py migrate
 ```
-5. Запустить проект (в тестовом режиме):
+5. Запустить проект (в режиме сервера Django):
 ```
 python3 manage.py runserver
 ```
