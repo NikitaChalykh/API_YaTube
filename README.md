@@ -46,6 +46,8 @@ pip install -r requirements.txt
 ```
 cd api_final_yatube
 
+python3 manage.py makemigrations
+
 python3 manage.py migrate
 ```
 5. Запустить проект (в режиме сервера Django):
