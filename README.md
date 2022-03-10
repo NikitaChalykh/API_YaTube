@@ -18,6 +18,7 @@ API сервис для [проекта социальной сети Yatube](ht
 * Python 3.8
 * Django 2.2 
 * Django Rest Framework
+* Pytest
 * Simple-JWT
 * SQLite3
 
