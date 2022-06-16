@@ -1,4 +1,4 @@
-REST API сервиса YaTube 
+REST API социальной сети YaTube 
 =====
 
 Описание проекта
